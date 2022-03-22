@@ -21,14 +21,22 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/786452470@qq.com/FYFPlugins'
+  s.homepage         = 'https://github.com/fanyunfei786452470/FYFPlugins'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { '786452470@qq.com' => 'fyf786452470@gmail.com' }
-  s.source           = { :git => 'https://github.com/786452470@qq.com/FYFPlugins.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/fanyunfei786452470/FYFPlugins.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'
+  
+  # 组件支持的架构，并且module化，为后期组件混编做准备，也为了规范化管理
+  s.pod_target_xcconfig = {
+    'VALID_ARCHS' => 'arm64e arm64 armv7 armv7s x86_64',
+    'DEFINES_MODULE' => 'YES'
+  }
+  # 组件支持swift混编的版本
+  s.swift_versions = ['5.1', '5.2','5.3', '5.4']
 
   s.source_files = 'FYFPlugins/Classes/**/*'
   
@@ -39,4 +47,7 @@ TODO: Add long description of the pod here.
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
+  
+  s.dependency 'FYFWebController'
+  
 end
