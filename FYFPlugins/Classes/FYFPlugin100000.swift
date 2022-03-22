@@ -8,7 +8,8 @@
 import UIKit
 import FYFWebController
 
-class FYFPlugin100000: FYFBasePlugin {
+@objc(FYFPlugin100000)
+open class FYFPlugin100000: FYFBasePlugin {
 
     //MARK: - KSJSInvokeNativeDelegate
     func serverInvoke(param: Any?) {
