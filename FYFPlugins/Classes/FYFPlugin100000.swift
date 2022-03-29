@@ -11,8 +11,9 @@ import FYFWebController
 @objc(FYFPlugin100000)
 open class FYFPlugin100000: FYFBasePlugin {
 
-    //MARK: - KSJSInvokeNativeDelegate
-    func serverInvoke(param: Any?) {
+    //MARK: - FYFJSInvokeNativeDelegate
+    open override func serverInvoke(param: Any?) {
         print("i am 100000插件， 主要负责网络请求")
+        iosCallbackJSFlowNo(flowNo: "12345", param: nil)
     }
 }
