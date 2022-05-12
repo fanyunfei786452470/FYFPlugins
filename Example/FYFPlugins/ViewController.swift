@@ -28,7 +28,23 @@ class ViewController: UIViewController {
             make.centerX.equalTo(self.view)
             make.top.equalTo(self.view).offset(300)
             make.size.equalTo(CGSize(width: 80, height: 30))
-        }  
+        }
+        
+        let vc = ViewController.init()
+        print(vc)
+        print(vc.self)
+        print(type(of: vc))
+        
+        print("----------------------")
+        
+        let vcClass: ViewController.Type = ViewController.self
+        print(vcClass)
+        print(vcClass.self)
+        print(type(of: vcClass))
+        
+        print("----------------------")
+        
+        print(Self.self)
     }
 
     override func didReceiveMemoryWarning() {
